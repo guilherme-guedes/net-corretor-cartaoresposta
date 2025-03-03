@@ -10,14 +10,14 @@ namespace CorretorCartaoResposta.Teste
         public void Deve_Corrigir_Cartao_Com_ImagemFoto_Cortada_Iluminada()
         {
             Environment.SetEnvironmentVariable("PREENCHIMENTO_MINIMO_MARCACAO", "51");
-            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta.Teste\tessdata-main");
+            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"..\tessdata-main");
 
             int[] gabarito = GabaritoQuestoes(qtdAlternativas: 5, qtdQuestoes: 100);
 
             var modeloCartao = new ModeloCartaoResposta(QuantidadeColunas: 5, QuantidadeQuestoes: 100, QuantidadeAlternativasPorQuestao: 5);
 
             var corretor = new Corretor(gabarito, modeloCartao);
-            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta\testes\cartao-teste77.jpeg"), true);
+            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"..\testes\cartao-teste77.jpeg"), true);
 
             Console.ReadKey();
         }
@@ -26,14 +26,14 @@ namespace CorretorCartaoResposta.Teste
         public void Deve_Corrigir_Cartao_ImagemScaneada()
         {
             Environment.SetEnvironmentVariable("PREENCHIMENTO_MINIMO_MARCACAO", "51");
-            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta.Teste\tessdata-main");
+            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"..\tessdata-main");
 
             int[] gabarito = GabaritoQuestoes(qtdAlternativas: 5, qtdQuestoes: 100);
 
             var modeloCartao = new ModeloCartaoResposta(QuantidadeColunas: 5, QuantidadeQuestoes: 100, QuantidadeAlternativasPorQuestao: 5);
 
             var corretor = new Corretor(gabarito, modeloCartao);
-            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta\testes\cartao-scanner.jpeg"), true);
+            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"..\testes\cartao-scanner.jpeg"), true);
 
             Console.ReadKey();
         }
@@ -42,14 +42,14 @@ namespace CorretorCartaoResposta.Teste
         public void Deve_Corrigir_Cartao_ImagemFoto_Normal()
         {
             Environment.SetEnvironmentVariable("PREENCHIMENTO_MINIMO_MARCACAO", "51");
-            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta.Teste\tessdata-main");
+            Environment.SetEnvironmentVariable("TESSERACT_FOLDER", @"..\tessdata-main");
 
             int[] gabarito = GabaritoQuestoes(qtdAlternativas: 5, qtdQuestoes: 100);
 
             var modeloCartao = new ModeloCartaoResposta(QuantidadeColunas: 5, QuantidadeQuestoes: 100, QuantidadeAlternativasPorQuestao: 5);
 
             var corretor = new Corretor(gabarito, modeloCartao);
-            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"C:\Guilherme\Projetos\Desenvolvimento\Estudo\ReconhecimentoRespostas\ReconhecimentoDeRespostas\CorretorCartaoResposta\testes\cartao-foto-normal1.jpeg"), true);
+            var cartaoResposta = corretor.Corrigir(LeitorCartoes.LerCartaoResposta(@"..\testes\cartao-foto-normal1.jpeg"), true);
 
             Console.ReadKey();
         }
